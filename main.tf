@@ -29,12 +29,3 @@ resource "null_resource" "get_idcs_token" {
 }
 
 #https://medium.com/oracledevs/provision-and-configure-oracle-integration-cloud-instance-using-terraform-6baa89c257a
-/*
-
-
-curl --location 'https://idcs-7904b09d0d2a4c13a63a4300dad1617c.identity.oraclecloud.com:443/oauth2/v1/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---header 'Authorization: Basic YTEwZDFlOTBlMGU4NGYwZmE4OTA5MGEzNGU3ZTJlYWQ6aWRjc2NzLTA1NWE5ODJmLWQ1ZDAtNDI4Yi1iODk0LTFkMTZkMjdmMjE0YQ==' \
---data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'scope=urn:opc:idm:__myscopes__'
-*/
