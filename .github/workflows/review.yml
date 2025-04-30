@@ -24,9 +24,8 @@ jobs:
             #  uses: actions/checkout@master
             - name: Checkout
               uses: actions/checkout@v4
-              
               with:
-                fetch-depth: 0            
+                fetch-depth: 0   
 
             - name: Echo environment
               run: echo "Using environment [${environment}]"
@@ -45,6 +44,8 @@ jobs:
               uses: gitleaks/gitleaks-action@v2
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                args: --commit=latest
             #- name: 'Looking for git leaks'
             #  run: cd ${GITHUB_WORKSPACE}/ && gitleaks git -v
             #  shell: bash
