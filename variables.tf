@@ -30,6 +30,6 @@ variable "idcs_client_secret" {
 }
 
 variable "compartment_id" {
-  type = string
+  type        = string
   description = "The compartment OCID to deploy de instnace"
 }
