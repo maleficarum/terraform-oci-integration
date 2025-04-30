@@ -1,7 +1,5 @@
 variable "oic_definition" {
   type = object({
-    name                      = string,
-    compartment               = string,
     instance_type             = string, # ["STANDARDX", "ENTERPRISEX"]
     is_byol                   = string,
     message_packs             = number,
@@ -29,4 +27,9 @@ variable "idcs_client_secret" {
   type        = string
   description = "IDCS Client Secret"
   sensitive   = true
+}
+
+variable "compartment_id" {
+  type = string
+  description = "The compartment OCID to deploy de instnace"
 }
