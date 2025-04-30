@@ -1,5 +1,6 @@
 variable "oic_definition" {
   type = object({
+    name = string,
     instance_type             = string, # ["STANDARDX", "ENTERPRISEX"]
     is_byol                   = string,
     message_packs             = number,
