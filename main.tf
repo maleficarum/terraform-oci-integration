@@ -1,5 +1,5 @@
 resource "oci_integration_integration_instance" "oic_instance" {
-  compartment_id            = var.oic_definition.compartment
+  compartment_id            = var.compartment_id
   display_name              = var.oic_definition.name
   integration_instance_type = var.oic_definition.instance_type
   is_byol                   = var.oic_definition.is_byol
@@ -23,9 +23,9 @@ resource "null_resource" "get_idcs_token" {
       EOT
   }
 
-  triggers = {
+  /*triggers = {
     "build_number" = timestamp()
-  }
+  }*/
 }
 
 #https://medium.com/oracledevs/provision-and-configure-oracle-integration-cloud-instance-using-terraform-6baa89c257a
