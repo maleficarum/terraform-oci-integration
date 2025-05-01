@@ -18,7 +18,7 @@ resource "oci_integration_integration_instance" "oic_instance" {
 
 resource "null_resource" "get_idcs_token" {
   provisioner "local-exec" {
-    when = create
+    when    = create
     command = <<EOT
         curl -X POST  ${var.idcs_domain}/oauth2/v1/token -H 'Authorization: Basic ${base64encode(format("%s:%s", var.idcs_client_id, var.idcs_client_secret))}' -d 'grant_type=client_credentials&scope=urn:opc:idm:__myscopes__' | jq '.' > token.tok
       EOT
